@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiz de Matemática</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>Quiz de Matemática!</h1>
+    <form id="quizForm">
+      <div class="question">
+        <p>1) Quanto é 5 + 3?</p>
+        <input type="number" name="q1" required>
+      </div>
+      <div class="question">
+        <p>2) Quanto é 9 - 4?</p>
+        <input type="number" name="q2" required>
+      </div>
+      <div class="question">
+        <p>3) Quanto é 6 x 2?</p>
+        <input type="number" name="q3" required>
+      </div>
+      <div class="question">
+        <p>4) Quanto é 20 ÷ 5?</p>
+        <input type="number" name="q4" required>
+      </div>
+      <div class="question">
+        <p>5) Quanto é 7 + 6?</p>
+        <input type="number" name="q5" required>
+      </div>
+      <button type="submit">Enviar Respostas</button>
+    </form>
+    <div id="resultado" class="resultado"></div>
+  </div>
+
+  <script>
+    const form = document.getElementById('quizForm');
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      let respostas = {
+        q1: 8,
+        q2: 5,
+        q3: 12,
+        q4: 4,
+        q5: 13
+      };
+      
+      let acertos = 0;
+      for (let i = 1; i <= 5; i++) {
+        let respostaUsuario = parseInt(form['q' + i].value);
+        if (respostaUsuario === respostas['q' + i]) {
+          acertos++;
+        }
+      }
+
+      const resultadoDiv = document.getElementById('resultado');
+      resultadoDiv.innerHTML = `<h2>Você acertou ${acertos} de 5 perguntas!</h2>`;
+    });
+  </script>
+</body>
+</html>

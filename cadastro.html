@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login - Matemática Divertida</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="login-container">
+    <h1>Apoio para estudos</h1>
+    <form id="loginForm">
+      <input type="email" id="email" placeholder="E-mail" required>
+      <input type="password" id="password" placeholder="Senha" required>
+      <button type="submit">Entrar</button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('loginForm');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      // Simulação de login
+      window.location.href = 'quiz.html';
+    });
+  </script>
+</body>
+</html>
